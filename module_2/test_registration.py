@@ -23,8 +23,6 @@ try:
 
     # Проверяем, что смогли зарегистрироваться
     # ждем загрузки страницы
-    time.sleep(1)
-
     # находим элемент, содержащий текст
     welcome_text_elt = browser.find_element_by_tag_name("h1")
     # записываем в переменную welcome_text текст из элемента welcome_text_elt
