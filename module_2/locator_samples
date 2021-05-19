@@ -1,5 +1,5 @@
 input#name
-//input[@id="lastname"]
+//input[@name="userlastname"]
 input.email-class
 //input[@my_phone_attr="my_phone"]
 //input[@class="form-control address-class"]
