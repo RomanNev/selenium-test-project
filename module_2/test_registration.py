@@ -9,9 +9,9 @@ try:
     browser.get(link)
 
     # Ваш код, который заполняет обязательные поля
-    input1 = browser.find_element_by_css_selector('[placeholder="Input your first name"]')
+    input1 = browser.find_element_by_css_selector('.first_block .form-control.first')
     input1.send_keys("Ivan")
-    input2 = browser.find_element_by_css_selector('[placeholder="Input your last name"]')
+    input2 = browser.find_element_by_css_selector('.first_block .form-control.second')
     input2.send_keys("Petrov")
     input3 = browser.find_element_by_xpath('//input[@placeholder="Input your email"]')
     input3.send_keys("ivan_petrov@gmail.com")
