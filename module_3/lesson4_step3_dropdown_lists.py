@@ -2,8 +2,9 @@ from selenium.webdriver.support.ui import Select
 import time
 from selenium import webdriver
 
-#link = "http://suninjuly.github.io/selects1.html"
+# link = "http://suninjuly.github.io/selects1.html"
 links = ["http://suninjuly.github.io/selects1.html", "http://suninjuly.github.io/selects2.html"]
+
 
 def selekt_tru_answer(link):
     browser = webdriver.Chrome()
@@ -17,6 +18,7 @@ def selekt_tru_answer(link):
 
     select.select_by_value(str(sum))
     button.click()
+
 
 try:
 

@@ -8,10 +8,9 @@ try:
     browser = webdriver.Chrome()
     browser.get(link)
 
-    data_link = str(math.ceil(math.pow(math.pi, math.e)*10000))
+    data_link = str(math.ceil(math.pow(math.pi, math.e) * 10000))
     find_link = browser.find_element_by_link_text(data_link)
     find_link.click()
-
 
     input1 = browser.find_element_by_tag_name("input")
     input1.send_keys("Ivan")
