@@ -33,7 +33,7 @@ def test_login_old_user():
         assert result_messege_login == search_text, "welcome message exists"
 
     finally:
-        time.sleep(20)
+        time.sleep(3)
         browser.quit()
 
 
