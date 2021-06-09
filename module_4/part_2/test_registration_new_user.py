@@ -8,6 +8,7 @@ def random_data_for_registration():
 
 class TestLogin:
     def test_registration_new_user(self, browser):
+        # Arrange
         login_button_link_locator = "#login_link"
         input_email_locator = "#id_registration-email"
         input_password_locator = "#id_registration-password1"
@@ -21,6 +22,7 @@ class TestLogin:
         password = "56345762497437865"
         welcome_text = "Спасибо за регистрацию!"
 
+        # Act
         browser.get(link)
         browser.implicitly_wait(5)
 
@@ -31,8 +33,7 @@ class TestLogin:
         browser.find_element_by_css_selector(summit_button_locator).click()
         resul_messege = browser.find_element_by_css_selector(result_messege_registration).text
 
-
-
+        # Assert
         assert resul_messege  == welcome_text, "welcome message exists"
 
 
