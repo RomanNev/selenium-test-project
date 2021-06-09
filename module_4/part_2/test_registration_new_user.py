@@ -8,7 +8,7 @@ def random_data_for_registration():
 
 class TestLogin:
     def test_registration_new_user(self, browser):
-        # Arrange
+        # Data
         login_button_link_locator = "#login_link"
         input_email_locator = "#id_registration-email"
         input_password_locator = "#id_registration-password1"
@@ -22,10 +22,11 @@ class TestLogin:
         password = "56345762497437865"
         welcome_text = "Спасибо за регистрацию!"
 
-        # Act
+        # Arrange
         browser.get(link)
         browser.implicitly_wait(5)
 
+        # Act
         browser.find_element_by_css_selector(login_button_link_locator).click()
         browser.find_element_by_css_selector(input_email_locator).send_keys(email)
         browser.find_element_by_css_selector(input_password_locator).send_keys(password)

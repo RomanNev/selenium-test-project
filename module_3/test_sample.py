@@ -12,6 +12,7 @@ result_messege_login_locator = "div.alertinner"
 
 
 def test_login_old_user():
+    # Data
     search_text = "Рады видеть вас снова"
     user_login = "test_987@bail.com"
     user_passwoord = "passtest_987"

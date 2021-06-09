@@ -3,7 +3,7 @@ link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
 
 class TestItemMarket:
     def test_button_to_basket(self, browser, language):
-        # Arrange
+        # Data
         btn_add_to_basket = ".btn-add-to-basket"
         text_btn_add_to_basket = {"ru": "Добавить в корзину",
                                   "ar": "أضف الى سلة التسوق",
@@ -27,9 +27,10 @@ class TestItemMarket:
                                   "uk": "Додати в кошик",
                                   }
 
-        # Act
+        # Arrange
         browser.get(link)
         browser.implicitly_wait(5)
+        # Act
         btn_text = browser.find_element_by_css_selector(btn_add_to_basket).text
 
         # Assert
