@@ -18,6 +18,16 @@ class LoginPageLocators():
     RESULT_MESSEGE_ = (By.CSS_SELECTOR, "div.alertinner")
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
 
+class ProductPageLocators():
+    ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
+    PRODUCT_NAME = (By.CSS_SELECTOR, ".col-sm-6 h1")
+    PRICE_PRODUCT = (By.CSS_SELECTOR, "p.price_color")
+    MESSEGE_SUCCESSFUL_PRODUCT_ADDITION  = (By.CSS_SELECTOR, "#messages > .alert:nth-child(1)")
+    NAME_PRODUCT_ADDITION  = (By.CSS_SELECTOR, "#messages > div:nth-child(1) > .alertinner > strong")
+    PRICE_PRODUCT_ADDITION  = (By.CSS_SELECTOR, " div.alertinner > p:nth-child(1) > strong")
+
+
+
 
 
 
