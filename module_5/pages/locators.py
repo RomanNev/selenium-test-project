@@ -12,6 +12,7 @@ class LoginPageLocators():
     SUBMIT_BUTTON_REGISTRATION = (By.CSS_SELECTOR, '[name="registration_submit"]')
     RESULT_MESSEGE_REGISTRATION = (By.CSS_SELECTOR, '.alertinner')
     REGISTRATION_FORM = (By.CSS_SELECTOR, "#register_form")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
     INPUT_EMAIL = (By.CSS_SELECTOR, "#id_login-username")
     INPUT_PASSWORD = (By.CSS_SELECTOR, "#id_login-password")
@@ -31,6 +32,7 @@ class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-group a.btn.btn-default")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 class BasketPageLocators():
     MESSEGE_EMPTY_CART = (By.CSS_SELECTOR, "#content_inner p")
