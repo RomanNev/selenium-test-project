@@ -26,7 +26,9 @@ class ProductPageLocators():
     NAME_PRODUCT_ADDITION  = (By.CSS_SELECTOR, "#messages > div:nth-child(1) > .alertinner > strong")
     PRICE_PRODUCT_ADDITION  = (By.CSS_SELECTOR, " div.alertinner > p:nth-child(1) > strong")
 
-
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
 
 
 
