@@ -22,7 +22,6 @@ class TestProductPage:
         page.product_price_checed()
 
 
-
     # @pytest.mark.parametrize('promo_offer',
     #                          ["offer0", "offer1", "offer2", "offer3", "offer4", "offer5", "offer6",
     #                           pytest.param("offer7", marks=pytest.mark.xfail), "offer8",
@@ -45,7 +44,6 @@ class TestProductPage:
         page.open()
         page.add_to_basket_product()
         page.should_not_be_success_message()
-
 
 
     @pytest.mark.xfail
@@ -84,8 +82,6 @@ class TestProductPage:
         page = ProductPage(browser, link)
         page.open()
         page.should_not_be_success_message()
-
-
 
 class TestUserAddToBasketFromProductPage():
 
