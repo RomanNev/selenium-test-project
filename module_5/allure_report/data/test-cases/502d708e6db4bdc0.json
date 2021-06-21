@@ -1,0 +1,99 @@
+{
+  "uid" : "502d708e6db4bdc0",
+  "name" : "test_item_page_has_add_basket_button",
+  "fullName" : "module_5.test_screenshots#test_item_page_has_add_basket_button",
+  "historyId" : "7d44899c026dc94ab93e2e0ead02d4e4",
+  "time" : {
+    "start" : 1624280013194,
+    "stop" : 1624280014975,
+    "duration" : 1781
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "browser",
+    "time" : {
+      "start" : 1624280011919,
+      "stop" : 1624280013192,
+      "duration" : 1273
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a6788b7aa6ca1262",
+      "name" : "stdout",
+      "source" : "a6788b7aa6ca1262.txt",
+      "type" : "text/plain",
+      "size" : 49
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "browser::0",
+    "time" : {
+      "start" : 1624280014976,
+      "stop" : 1624280017558,
+      "duration" : 2582
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "module_5"
+  }, {
+    "name" : "suite",
+    "value" : "test_screenshots"
+  }, {
+    "name" : "host",
+    "value" : "NOTEBOOK"
+  }, {
+    "name" : "thread",
+    "value" : "8776-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "module_5.test_screenshots"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "502d708e6db4bdc0.json",
+  "parameterValues" : [ ]
+}

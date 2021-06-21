@@ -1,29 +1,31 @@
+from datetime import datetime
 
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from datetime import datetime
 
-def pytest_addoption(parser): # метод для передачи параметров командной строке
-    parser.addoption('--browser_name', #  принимаем браузер
+
+def pytest_addoption(parser):  # метод для передачи параметров командной строке
+    parser.addoption('--browser_name',  # принимаем браузер
                      action='store',
                      default="chrome",
                      help="Choose browser: chrome or firefox")
-    parser.addoption('--language', # принимаем язык
+    parser.addoption('--language',  # принимаем язык
                      action='store',
                      default='en',
-                     help="Choose language : ru, en ..." )
+                     help="Choose language : ru, en ...")
+
 
 @pytest.fixture(scope="function")
-def browser(request): # принимаем  реквест от pytest_addoption  с введенным языком из командной строки
+def browser(request):  # принимаем  реквест от pytest_addoption  с введенным языком из командной строки
     browser_name = request.config.getoption("browser_name")
     user_language = request.config.getoption("language")  # запрос значения языка
     browser = None
     if browser_name == "chrome":
         options = Options()
-        options.add_experimental_option('prefs', {'intl.accept_languages': user_language}) # задаем нужный язык
+        options.add_experimental_option('prefs', {'intl.accept_languages': user_language})  # задаем нужный язык
         print("\nstart chrome browser for test..")
-        browser = webdriver.Chrome(options=options) # запускаем выбранный браузер с нужным языком
+        browser = webdriver.Chrome(options=options)  # запускаем выбранный браузер с нужным языком
     elif browser_name == "firefox":
         fp = webdriver.FirefoxProfile()
         fp.set_preference("intl.accept_languages", user_language)
