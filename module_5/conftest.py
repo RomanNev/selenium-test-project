@@ -39,6 +39,6 @@ def browser(request):  # принимаем  реквест от pytest_addoptio
     # получаем переменную с текущей датой и временем в формате ГГГГ-ММ-ДД_ЧЧ-ММ-СС
     now = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     # делаем скриншот с помощью команды Selenium'а и сохраняем его с именем "screenshot-ГГГГ-ММ-ДД_ЧЧ-ММ-СС"
-    browser.save_screenshot('screenshot-%s.png' % now)
+    browser.save_screenshot('module_5/screen_log/screenshot-%s.png' % now)
 
     browser.quit()
