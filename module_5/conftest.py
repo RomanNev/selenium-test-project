@@ -42,3 +42,7 @@ def browser(request):  # принимаем  реквест от pytest_addoptio
     browser.save_screenshot('module_5/screen_log/screenshot-%s.png' % now)
 
     browser.quit()
+
+@pytest.fixture(scope="session")
+def language(request):
+    return request.config.getoption("language")

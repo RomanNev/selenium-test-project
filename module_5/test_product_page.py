@@ -12,10 +12,13 @@ link_available_item = "http://selenium1py.pythonanywhere.com/catalogue/coders-at
 
 class TestProductPage:
     def test_guest_can_add_product_to_basket(self, browser):
+        # Arrange
         page = ProductPage(browser, link_promo_new_year)
+        # Act
         page.open()
         page.add_to_basket_product()
         page.solve_quiz_and_get_code()
+        # Assert
         page.should_be_message_adding_item_to_the_cart()
         page.should_be_message_about_the_price_in_the_basked()
         page.product_name_check()
@@ -28,11 +31,14 @@ class TestProductPage:
                               pytest.param("?promo=offer7", marks=pytest.mark.xfail), "?promo=offer8",
                               "?promo=offer9"])
     def test_guest_can_add_product_to_basket(self, browser, promo_offer):
+        # Arrange
         link = link_available_item+promo_offer
         page = ProductPage(browser, link)
+        # Act
         page.open()
         page.add_to_basket_product()
         page.solve_quiz_and_get_code()
+        # Assert
         page.should_be_message_adding_item_to_the_cart()
         page.should_be_message_about_the_price_in_the_basked()
         page.product_name_check()
@@ -40,41 +46,59 @@ class TestProductPage:
 
     @pytest.mark.xfail
     def test_guest_cant_see_success_message_after_adding_product_to_basket(self, browser):
+        # Arrange
         page = ProductPage(browser, link_available_item)
+        # Act
         page.open()
         page.add_to_basket_product()
+        # Assert
         page.should_not_be_success_message()
 
     @pytest.mark.xfail
     def test_message_disappeared_after_adding_product_to_basket(self, browser):
+        # Arrange
         page = ProductPage(browser, link_available_item)
+        # Act
         page.open()
         page.add_to_basket_product()
+        # Assert
         page.should_be_disappeared()
 
     def test_guest_should_see_login_link_on_product_page(self, browser):
+        # Arrange
         page = ProductPage(browser, link_unavailable_item)
+        # Act
         page.open()
+        # Assert
         page.should_be_login_link()
 
-    def test_guest_can_go_to_login_page_from_product_page(self, browser):
+    def test_guest_can_go_to_login_page_from_product_page(self, browser, language):
+        # Arrange
         page = ProductPage(browser, link_unavailable_item)
+        # Act
         page.open()
         page.go_to_login_page()  # выполняем метод страницы - переходим на страницу логина
-        login_page = LoginPage(browser, browser.current_url)  # переход на страницу LoginPage
+        login_page = LoginPage(browser, browser.current_url, language)  # переход на страницу LoginPage
+        # Assert
         login_page.should_be_login_page()
 
     def test_guest_cant_see_product_in_basket_opened_from_product_page(self, browser):
+        # Arrange
         page = ProductPage(browser, link_unavailable_item)
+        # Act
         page.open()
         page.go_to_basket()
         basket_page = BasketPage(browser, browser.current_url)
+        # Assert
         basket_page.should_not_be_messege_item_in_the_cart()
         basket_page.should_be_empty_cart_message()
 
     def test_guest_cant_see_success_message(self, browser):
+        # Arrange
         page = ProductPage(browser, link_available_item)
+        # Act
         page.open()
+        # Assert
         page.should_not_be_success_message()
 
 
@@ -82,23 +106,32 @@ class TestUserAddToBasketFromProductPage():
     link_login = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
+        # Arrange
         email = str(time.time()) + "@fakemail.org"
         password = "56345762497437865"
         page = LoginPage(browser, self.link_login)
+        # Act
         page.open()
         page.register_new_user(email, password)
+        # Assert
         page.should_be_authorized_user()
 
     def test_user_cant_see_success_message(self, browser):
+        # Arrange
         page = ProductPage(browser, link_available_item)
+        # Act
         page.open()
+        # Assert
         page.should_not_be_success_message()
 
     def test_user_can_add_product_to_basket(self, browser):
+        # Arrange
         page = ProductPage(browser, link_promo_new_year)
+        # Act
         page.open()
         page.add_to_basket_product()
         page.solve_quiz_and_get_code()
+        # Assert
         page.should_be_message_adding_item_to_the_cart()
         page.should_be_message_about_the_price_in_the_basked()
         page.product_name_check()
