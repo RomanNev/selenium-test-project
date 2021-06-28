@@ -110,7 +110,8 @@ class TestUserAddToBasketFromProductPage():
         # Assert
         page.should_be_authorized_user()
 
-    @allure.title("Гость не видит сообщение об успешном добавление продукта в корзину после перехода на стрницу продукта")
+    @allure.title("Авторизованный пользователь не видит сообщение об успешном "
+                  "добавление продукта в корзину, после перехода на стрницу продукта")
     def test_user_cant_see_success_message(self, browser):
         # Arrange
         page = ProductPage(browser, link_available_item)
@@ -119,7 +120,7 @@ class TestUserAddToBasketFromProductPage():
         # Assert
         page.should_not_be_success_message()
 
-    @allure.title("Гость может добавить продукт в корзину")
+    @allure.title("Авторизованный пользователь добавить продукт в корзину")
     def test_user_can_add_product_to_basket(self, browser):
         # Arrange
         page = ProductPage(browser, link_promo_new_year)

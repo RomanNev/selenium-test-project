@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 from .locators import BasePageLocators
-
+from .locators import LoginPageLocators
 
 class BasePage():
     def __init__(self, browser, url, language = None , timeout=10):
@@ -73,3 +73,7 @@ class BasePage():
     def should_be_authorized_user(self):
         assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
                                                                      " probably unauthorised user"
+
+    def should_be_messege_authorized_user(self):
+        assert self.is_element_present(*LoginPageLocators.SUCCESSFUL_REGISTER_MESSAGE), "Successful register message is not presented, " \
+                                                                           "probably unauthorised user"

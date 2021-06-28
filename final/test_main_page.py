@@ -7,11 +7,12 @@ from .pages.main_page import MainPage
 
 
 class TestMainPage:
-    link = "http://selenium1py.pythonanywhere.com/"
+    main_page_link = "http://selenium1py.pythonanywhere.com/"
+    login_page_link = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
     @allure.title("Гость не должен увидеть товар в пустой корзине, открытой с главной страницы")
     def test_guest_cant_see_product_in_basket_opened_from_main_page(self, browser):
         # Arrange
-        page = MainPage(browser, self.link)
+        page = MainPage(browser, self.main_page_link)
         # Act
         page.open()
         page.go_to_basket()
@@ -19,6 +20,22 @@ class TestMainPage:
         # Assert
         basket_page.should_not_be_messege_item_in_the_cart()
         basket_page.should_be_empty_cart_message()
+
+    @allure.title("Гость может зарегистрироваться")
+    def test_quest_can_register(self, browser):
+        # Arrange
+        page = LoginPage(browser, self.login_page_link)
+        # Act
+        page.open()
+        page.register_new_user()
+        # Assert
+        page.should_be_authorized_user()
+
+
+
+
+
+
 
 
 @pytest.mark.login_guest
