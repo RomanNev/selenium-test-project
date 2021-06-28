@@ -17,14 +17,14 @@ class TestProductPage:
                               "?promo=offer4", "?promo=offer5", "?promo=offer6",
                               pytest.param("?promo=offer7", marks=pytest.mark.xfail), "?promo=offer8",
                               "?promo=offer9"])
-    @allure.title("Гость может добавить товар в корзину")
-    def test_guest_can_add_product_to_basket(self, browser, promo_offer):
+    @allure.title("Гость может добавить товар в корзину со страницы продукта")
+    def test_guest_can_add_product_to_basket_from_product_page(self, browser, promo_offer):
         # Arrange
         link = link_available_item+promo_offer
         page = ProductPage(browser, link)
         # Act
         page.open()
-        page.add_to_basket_product()
+        page.add_to_basket_product_from_product_page()
         page.solve_quiz_and_get_code()
         # Assert
         page.should_be_message_adding_item_to_the_cart()
@@ -39,7 +39,7 @@ class TestProductPage:
         page = ProductPage(browser, link_available_item)
         # Act
         page.open()
-        page.add_to_basket_product()
+        page.add_to_basket_product_from_product_page()
         # Assert
         page.should_not_be_success_message()
 
@@ -50,7 +50,7 @@ class TestProductPage:
         page = ProductPage(browser, link_available_item)
         # Act
         page.open()
-        page.add_to_basket_product()
+        page.add_to_basket_product_from_product_page()
         # Assert
         page.should_be_disappeared()
 
@@ -126,7 +126,7 @@ class TestUserAddToBasketFromProductPage():
         page = ProductPage(browser, link_promo_new_year)
         # Act
         page.open()
-        page.add_to_basket_product()
+        page.add_to_basket_product_from_product_page()
         page.solve_quiz_and_get_code()
         # Assert
         page.should_be_message_adding_item_to_the_cart()

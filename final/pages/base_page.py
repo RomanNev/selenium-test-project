@@ -74,6 +74,10 @@ class BasePage():
         assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
                                                                      " probably unauthorised user"
 
-    def should_be_messege_authorized_user(self):
-        assert self.is_element_present(*LoginPageLocators.SUCCESSFUL_REGISTER_MESSAGE), "Successful register message is not presented, " \
+    def should_be_message_authorized_new_user(self):
+        assert self.is_element_present(*LoginPageLocators.RESULT_MESSAGE_REGISTRATION), "Successful register message is not presented, " \
+                                                                           "probably unauthorised user"
+
+    def should_be_message_authorized_old_user(self):
+        assert self.is_element_present(*LoginPageLocators.SUCCESSFUL_AUTHORIZED_MESSAGE), "Successful register message is not presented, " \
                                                                            "probably unauthorised user"

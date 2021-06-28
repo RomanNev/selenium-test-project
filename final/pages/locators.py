@@ -18,7 +18,7 @@ class LoginPageLocators():
     INPUT_EMAIL = (By.CSS_SELECTOR, "#id_login-username")
     INPUT_PASSWORD = (By.CSS_SELECTOR, "#id_login-password")
     SUBMIT_BUTTON = (By.CSS_SELECTOR, '[name="login_submit"]')
-    SUCCESSFUL_REGISTER_MESSAGE = (By.CSS_SELECTOR, "div.alertinner")
+    SUCCESSFUL_AUTHORIZED_MESSAGE = (By.CSS_SELECTOR, "div.alertinner")
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
 
 

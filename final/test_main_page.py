@@ -21,20 +21,12 @@ class TestMainPage:
         basket_page.should_not_be_messege_item_in_the_cart()
         basket_page.should_be_empty_cart_message()
 
-    @allure.title("Гость может зарегистрироваться")
-    def test_quest_can_register(self, browser):
+    @pytest.mark.personal_tests
+    @allure.title("Гость может добавить товар в корзину с главной страницы каталога")
+    def test_guest_can_add_product_to_basket_from_main_page(self, browser):
         # Arrange
-        page = LoginPage(browser, self.login_page_link)
-        # Act
-        page.open()
-        page.register_new_user()
-        # Assert
-        page.should_be_authorized_user()
-
-
-
-
-
+        page = MainPage(browser, self.main_page_link)
+        pass
 
 
 
