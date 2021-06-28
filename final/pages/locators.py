@@ -41,3 +41,19 @@ class BasePageLocators():
 class BasketPageLocators():
     MESSAGE_EMPTY_CART = (By.CSS_SELECTOR, "#content_inner p")
     MESSAGE_ITEM_IN_THE_CART = (By.CSS_SELECTOR, ".col-sm-6.h3")
+
+
+class CatalogPageLocators():
+    FIRST_ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, "li.col-xs-6:nth-child(1) > article:nth-child(1) > "
+                                                   "div:nth-child(4) > form:nth-child(3) > button")
+    FIRST_PRICE_PRODUCT_IN_CATALOG = (By.CSS_SELECTOR, "li.col-xs-6:nth-child(1) > article:nth-child(1) > div:nth-child(4) > p.price_color")
+    MESSAGE_SUCCESSFULLY_ADD_ITEM_TO_THE_CART = (By.CSS_SELECTOR, "div.alert:nth-child(1) > div")
+    ALERT_PRODUCT_BASKET = (By.CSS_SELECTOR, ".alert-info")
+    BUTTON_ALERT_PRODUCT_BASKET = (By.CSS_SELECTOR, "a.btn-info:nth-child(1)")
+    ALERT_PRICE_PRODUCT = (By.CSS_SELECTOR, ".alert-info strong")
+    PRICE_PRODUCT_IN_SITE_HEADER =(By.CSS_SELECTOR, ".basket-mini > strong ")
+
+
+
+
+

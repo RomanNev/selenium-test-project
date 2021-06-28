@@ -21,14 +21,6 @@ class TestMainPage:
         basket_page.should_not_be_messege_item_in_the_cart()
         basket_page.should_be_empty_cart_message()
 
-    @pytest.mark.personal_tests
-    @allure.title("Гость может добавить товар в корзину с главной страницы каталога")
-    def test_guest_can_add_product_to_basket_from_main_page(self, browser):
-        # Arrange
-        page = MainPage(browser, self.main_page_link)
-        pass
-
-
 
 @pytest.mark.login_guest
 class TestLoginFromMainPage():
