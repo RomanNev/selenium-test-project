@@ -1,3 +1,4 @@
+import allure
 import pytest
 
 from .pages.basket_page import BasketPage
@@ -7,7 +8,7 @@ from .pages.main_page import MainPage
 
 class TestMainPage:
     link = "http://selenium1py.pythonanywhere.com/"
-
+    @allure.title("Гость не должен увидеть товар в пустой корзине, открытой с главной страницы")
     def test_guest_cant_see_product_in_basket_opened_from_main_page(self, browser):
         # Arrange
         page = MainPage(browser, self.link)
@@ -23,7 +24,7 @@ class TestMainPage:
 @pytest.mark.login_guest
 class TestLoginFromMainPage():
     link = "http://selenium1py.pythonanywhere.com/"
-
+    @allure.title("Гость может перейти на страницу авторизации")
     def test_guest_can_go_to_login_page(self, browser, language):
         # Arrange
         page = MainPage(browser,
@@ -34,7 +35,7 @@ class TestLoginFromMainPage():
         login_page = LoginPage(browser, browser.current_url, language)  # переход на страницу LoginPage
         # Assert
         login_page.should_be_login_page()
-
+    @allure.title("Гостю доступна кнопка авторизации")
     def test_guest_should_see_login_link(self, browser):
         # Arrange
         page = MainPage(browser, self.link)

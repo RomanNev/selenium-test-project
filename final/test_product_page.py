@@ -1,5 +1,6 @@
 import time
 
+import allure
 import pytest
 
 from .pages.basket_page import BasketPage
@@ -11,25 +12,12 @@ link_unavailable_item = "http://selenium1py.pythonanywhere.com/catalogue/the-cit
 link_available_item = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
 
 class TestProductPage:
-    def test_guest_can_add_product_to_basket(self, browser):
-        # Arrange
-        page = ProductPage(browser, link_promo_new_year)
-        # Act
-        page.open()
-        page.add_to_basket_product()
-        page.solve_quiz_and_get_code()
-        # Assert
-        page.should_be_message_adding_item_to_the_cart()
-        page.should_be_message_about_the_price_in_the_basked()
-        page.product_name_check()
-        page.product_price_check()
-
-
     @pytest.mark.parametrize('promo_offer',
                              ["?promo=offer0", "?promo=offer1", "?promo=offer2", "?promo=offer3",
                               "?promo=offer4", "?promo=offer5", "?promo=offer6",
                               pytest.param("?promo=offer7", marks=pytest.mark.xfail), "?promo=offer8",
                               "?promo=offer9"])
+    @allure.title("Гость может добавить товар в корзину")
     def test_guest_can_add_product_to_basket(self, browser, promo_offer):
         # Arrange
         link = link_available_item+promo_offer
@@ -45,6 +33,7 @@ class TestProductPage:
         page.product_price_check()
 
     @pytest.mark.xfail
+    @allure.title("Гость  не видит сообщение об успешном завершении добавления продукта в корзину")
     def test_guest_cant_see_success_message_after_adding_product_to_basket(self, browser):
         # Arrange
         page = ProductPage(browser, link_available_item)
@@ -55,6 +44,7 @@ class TestProductPage:
         page.should_not_be_success_message()
 
     @pytest.mark.xfail
+    @allure.title("Сообщение пропадает после добавлените продукта в корзину")
     def test_message_disappeared_after_adding_product_to_basket(self, browser):
         # Arrange
         page = ProductPage(browser, link_available_item)
@@ -64,6 +54,7 @@ class TestProductPage:
         # Assert
         page.should_be_disappeared()
 
+    @allure.title("Гостю доступна кнопка авторизации на странице продукта")
     def test_guest_should_see_login_link_on_product_page(self, browser):
         # Arrange
         page = ProductPage(browser, link_unavailable_item)
@@ -72,6 +63,7 @@ class TestProductPage:
         # Assert
         page.should_be_login_link()
 
+    @allure.title("Гостю может перейти на страницу авторизации со страницы продукта")
     def test_guest_can_go_to_login_page_from_product_page(self, browser, language):
         # Arrange
         page = ProductPage(browser, link_unavailable_item)
@@ -82,6 +74,7 @@ class TestProductPage:
         # Assert
         login_page.should_be_login_page()
 
+    @allure.title("Гость не видит продукт в пустой корзине, открытой со страницы продукта")
     def test_guest_cant_see_product_in_basket_opened_from_product_page(self, browser):
         # Arrange
         page = ProductPage(browser, link_unavailable_item)
@@ -93,6 +86,7 @@ class TestProductPage:
         basket_page.should_not_be_messege_item_in_the_cart()
         basket_page.should_be_empty_cart_message()
 
+    @allure.title("Гость не видит сообщение об успешном добавление продукта в корзину после перехода на стрницу продукта")
     def test_guest_cant_see_success_message(self, browser):
         # Arrange
         page = ProductPage(browser, link_available_item)
@@ -116,6 +110,7 @@ class TestUserAddToBasketFromProductPage():
         # Assert
         page.should_be_authorized_user()
 
+    @allure.title("Гость не видит сообщение об успешном добавление продукта в корзину после перехода на стрницу продукта")
     def test_user_cant_see_success_message(self, browser):
         # Arrange
         page = ProductPage(browser, link_available_item)
@@ -124,6 +119,7 @@ class TestUserAddToBasketFromProductPage():
         # Assert
         page.should_not_be_success_message()
 
+    @allure.title("Гость может добавить продукт в корзину")
     def test_user_can_add_product_to_basket(self, browser):
         # Arrange
         page = ProductPage(browser, link_promo_new_year)
