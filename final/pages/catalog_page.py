@@ -33,6 +33,8 @@ class CatalogPage(BasePage):
         assert self.is_element_present(*CatalogPageLocators.BUTTON_ALERT_PRODUCT_BASKET), \
             "there should be button alert product basket"
 
+    def  first_price_product_text(self):
+        return self.get_text_element(*CatalogPageLocators.FIRST_PRICE_PRODUCT_IN_CATALOG)
 
 
 

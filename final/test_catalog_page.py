@@ -33,12 +33,16 @@ class TestCatalogPage:
         page = CatalogPage(browser, self.catalog_link)
         # Act
         page.open()
+        first_price_product = page.first_price_product_text()
         page.add_to_basket_product_from_catalog_page()
         page.go_to_basket_via_alert_from_catalog_page()
-        product_page = BasketPage(browser, browser.current_url)
+        basket_page = BasketPage(browser, browser.current_url)
+
         # Assert
-        product_page.should_be_message_item_in_the_cart()
-        product_page.s
+        basket_page.should_be_message_item_in_the_cart()
+        basket_page.check_price_added_item_basket_page(first_price_product)
+
+
 
 
 

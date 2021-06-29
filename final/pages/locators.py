@@ -41,6 +41,7 @@ class BasePageLocators():
 class BasketPageLocators():
     MESSAGE_EMPTY_CART = (By.CSS_SELECTOR, "#content_inner p")
     MESSAGE_ITEM_IN_THE_CART = (By.CSS_SELECTOR, ".col-sm-6.h3")
+    PRICE_ITEM_IN_BASKET = (By.CSS_SELECTOR, ".col-sm-1 .price_color")
 
 
 class CatalogPageLocators():
