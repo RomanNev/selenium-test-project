@@ -58,6 +58,23 @@ class TestCatalogPage:
         basket_page.should_not_be_message_item_in_the_cart()
         basket_page.should_be_no_deleted_item_in_the_cart()
 
+    @pytest.mark.personal_tests
+    @allure.title("Поиск товара по каталогу'")
+    def test_product_catalog_search(self, browser):
+        # Arrange
+        search_data = "Learning Python"
+        search_data_fragment = "Python"
+        page = CatalogPage(browser, self.catalog_link)
+        page.open()
+        # Act
+        page.search_product(search_data)
+        page.should_be_item_expected_in_the_search_results(search_data)
+
+
+
+
+
+
 
 
 

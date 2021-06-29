@@ -1,4 +1,4 @@
-from final.pages.base_page import BasePage
+from final.pages.base_page import BasePageC
 from final.pages.locators import CatalogPageLocators
 
 class CatalogPage(BasePage):
@@ -38,6 +38,19 @@ class CatalogPage(BasePage):
 
     def  first_name_product_text(self):
         return self.get_text_element(*CatalogPageLocators.FIRST_NAME_PRODUCT)
+
+    def search_product(self, name_product):
+        search_input = self.browser.find_element(*CatalogPageLocators.SEARCH_INPUT)
+        search_btn = self.browser.find_element(*CatalogPageLocators.SEARCH_BUTTON)
+        search_input.send_keys(name_product)
+        search_btn.click()
+
+    def should_be_item_expected_in_the_search_results(self, name_product):
+        assert self.get_text_element(*CatalogPageLocators.ITEM_LEARNING_PYTHON)  == name_product, \
+            "no product search results "
+
+
+
 
 
 

@@ -56,6 +56,11 @@ class CatalogPageLocators():
     ALERT_PRICE_PRODUCT = (By.CSS_SELECTOR, ".alert-info strong")
     PRICE_PRODUCT_IN_SITE_HEADER =(By.CSS_SELECTOR, ".basket-mini > strong")
     FIRST_NAME_PRODUCT = (By.CSS_SELECTOR, 'h3 [href="/ru/catalogue/the-shellcoders-handbook_209/"]')
+    SEARCH_INPUT = (By.CSS_SELECTOR, "#id_q")
+    SEARCH_BUTTON = (By.CSS_SELECTOR, "input.btn-default")
+    ITEM_LEARNING_PYTHON = (By.CSS_SELECTOR, 'h3 a[href="/ru/catalogue/learning-python_121/"]')
+
+
 
 
 
