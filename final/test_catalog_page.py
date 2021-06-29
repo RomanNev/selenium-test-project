@@ -34,6 +34,7 @@ class TestCatalogPage:
         # Act
         page.open()
         first_price_product = page.first_price_product_text()
+        first_name_product = page.first_name_product_text()
         page.add_to_basket_product_from_catalog_page()
         page.go_to_basket_via_alert_from_catalog_page()
         basket_page = BasketPage(browser, browser.current_url)
@@ -41,6 +42,8 @@ class TestCatalogPage:
         # Assert
         basket_page.should_be_message_item_in_the_cart()
         basket_page.check_price_added_item_basket_page(first_price_product)
+        basket_page.check_name_added_item_basket_page(first_name_product)
+
 
 
 

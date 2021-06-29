@@ -36,6 +36,8 @@ class CatalogPage(BasePage):
     def  first_price_product_text(self):
         return self.get_text_element(*CatalogPageLocators.FIRST_PRICE_PRODUCT_IN_CATALOG)
 
+    def  first_name_product_text(self):
+        return self.get_text_element(*CatalogPageLocators.FIRST_NAME_PRODUCT)
 
 
 

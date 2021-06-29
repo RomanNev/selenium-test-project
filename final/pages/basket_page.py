@@ -27,3 +27,8 @@ class BasketPage(BasePage):
         basket_price_product = self.get_text_element(*BasketPageLocators.PRICE_ITEM_IN_BASKET)
         assert first_price_product == basket_price_product, "the value in the cart is the same as " \
                                                           "the value of the item "
+
+    def check_name_added_item_basket_page(self, first_name_product):
+        basket_name_product = self.get_text_element(*BasketPageLocators.NAME_ITEM)
+        assert first_name_product == basket_name_product, "the name in the cart not is the same as " \
+                                                          "the name of the item "

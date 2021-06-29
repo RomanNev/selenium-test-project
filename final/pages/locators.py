@@ -42,6 +42,7 @@ class BasketPageLocators():
     MESSAGE_EMPTY_CART = (By.CSS_SELECTOR, "#content_inner p")
     MESSAGE_ITEM_IN_THE_CART = (By.CSS_SELECTOR, ".col-sm-6.h3")
     PRICE_ITEM_IN_BASKET = (By.CSS_SELECTOR, ".col-sm-1 .price_color")
+    NAME_ITEM = (By.CSS_SELECTOR, '.col-sm-4 h3 [href="/ru/catalogue/the-shellcoders-handbook_209/"]')
 
 
 class CatalogPageLocators():
@@ -53,6 +54,7 @@ class CatalogPageLocators():
     BUTTON_ALERT_PRODUCT_BASKET = (By.CSS_SELECTOR, "a.btn-info:nth-child(1)")
     ALERT_PRICE_PRODUCT = (By.CSS_SELECTOR, ".alert-info strong")
     PRICE_PRODUCT_IN_SITE_HEADER =(By.CSS_SELECTOR, ".basket-mini > strong")
+    FIRST_NAME_PRODUCT = (By.CSS_SELECTOR, 'h3 [href="/ru/catalogue/the-shellcoders-handbook_209/"]')
 
 
 
