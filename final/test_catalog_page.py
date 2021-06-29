@@ -38,6 +38,7 @@ class TestCatalogPage:
         product_page = BasketPage(browser, browser.current_url)
         # Assert
         product_page.should_be_message_item_in_the_cart()
+        product_page.s
 
 
 
