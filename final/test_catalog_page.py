@@ -7,6 +7,7 @@ from final.pages.catalog_page import CatalogPage
 
 class TestCatalogPage:
     catalog_link = "http://selenium1py.pythonanywhere.com/ru/catalogue/"
+
     @pytest.mark.personal_tests
     @allure.title("Гость может добавить товар в корзину с главной страницы каталога")
     def test_guest_can_add_product_to_basket_from_catalog_page(self, browser):
@@ -15,7 +16,7 @@ class TestCatalogPage:
         # Act
         page.open()
         page.add_to_basket_product_from_catalog_page()
-        #Assert
+        # Assert
         page.should_successfully_message_add_item_to_the_cart()
         page.should_successfully_alert_add_item_to_the_cart()
         page.check_price_added_item()
@@ -68,34 +69,5 @@ class TestCatalogPage:
         page.open()
         # Act
         page.search_product(search_data)
+        # Assert
         page.should_be_item_expected_in_the_search_results(search_data)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -10,6 +10,7 @@ link_promo_new_year = "http://selenium1py.pythonanywhere.com/catalogue/the-shell
 link_unavailable_item = "http://selenium1py.pythonanywhere.com/catalogue/the-city-and-the-stars_95/"
 link_available_item = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
 
+
 class TestProductPage:
     def test_guest_can_add_product_to_basket(self, browser):
         # Arrange
@@ -24,7 +25,6 @@ class TestProductPage:
         page.product_name_check()
         page.product_price_check()
 
-
     @pytest.mark.parametrize('promo_offer',
                              ["?promo=offer0", "?promo=offer1", "?promo=offer2", "?promo=offer3",
                               "?promo=offer4", "?promo=offer5", "?promo=offer6",
@@ -32,7 +32,7 @@ class TestProductPage:
                               "?promo=offer9"])
     def test_guest_can_add_product_to_basket(self, browser, promo_offer):
         # Arrange
-        link = link_available_item+promo_offer
+        link = link_available_item + promo_offer
         page = ProductPage(browser, link)
         # Act
         page.open()
@@ -104,6 +104,7 @@ class TestProductPage:
 
 class TestUserAddToBasketFromProductPage():
     link_login = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
+
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
         # Arrange

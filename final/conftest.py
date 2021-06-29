@@ -43,6 +43,7 @@ def browser(request):  # принимаем  реквест от pytest_addoptio
 
     browser.quit()
 
+
 @pytest.fixture(scope="session")
 def language(request):
     return request.config.getoption("language")

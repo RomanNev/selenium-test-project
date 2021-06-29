@@ -20,7 +20,6 @@ class BasketPage(BasePage):
         assert self.is_not_element_present(*BasketPageLocators.MESSAGE_ITEM_IN_THE_CART), \
             "there should be no message about items in the cart"
 
-
     def should_be_message_item_in_the_cart(self):
         assert self.is_element_present(*BasketPageLocators.MESSAGE_ITEM_IN_THE_CART), \
             "there should be  message about items in the cart"
@@ -31,7 +30,7 @@ class BasketPage(BasePage):
     def check_price_added_item_basket_page(self, first_price_product):
         basket_price_product = self.get_text_element(*BasketPageLocators.PRICE_ITEM_IN_BASKET)
         assert first_price_product == basket_price_product, "the value in the cart is the same as " \
-                                                          "the value of the item "
+                                                            "the value of the item "
 
     def check_name_added_item_basket_page(self, first_name_product):
         basket_name_product = self.get_text_element(*BasketPageLocators.NAME_ITEM)

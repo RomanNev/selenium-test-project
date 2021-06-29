@@ -11,6 +11,7 @@ link_promo_new_year = "http://selenium1py.pythonanywhere.com/catalogue/the-shell
 link_unavailable_item = "http://selenium1py.pythonanywhere.com/catalogue/the-city-and-the-stars_95/"
 link_available_item = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
 
+
 class TestProductPage:
     @pytest.mark.parametrize('promo_offer',
                              ["?promo=offer0", "?promo=offer1", "?promo=offer2", "?promo=offer3",
@@ -20,7 +21,7 @@ class TestProductPage:
     @allure.title("Гость может добавить товар в корзину со страницы продукта")
     def test_guest_can_add_product_to_basket_from_product_page(self, browser, promo_offer):
         # Arrange
-        link = link_available_item+promo_offer
+        link = link_available_item + promo_offer
         page = ProductPage(browser, link)
         # Act
         page.open()
@@ -86,7 +87,8 @@ class TestProductPage:
         basket_page.should_not_be_message_item_in_the_cart()
         basket_page.should_be_empty_cart_message()
 
-    @allure.title("Гость не видит сообщение об успешном добавление продукта в корзину после перехода на стрницу продукта")
+    @allure.title(
+        "Гость не видит сообщение об успешном добавление продукта в корзину после перехода на стрницу продукта")
     def test_guest_cant_see_success_message(self, browser):
         # Arrange
         page = ProductPage(browser, link_available_item)
@@ -98,6 +100,7 @@ class TestProductPage:
 
 class TestUserAddToBasketFromProductPage():
     link_login = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
+
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
         # Arrange

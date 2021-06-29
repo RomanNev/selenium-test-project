@@ -1,6 +1,7 @@
 from final.pages.base_page import BasePage
 from final.pages.locators import CatalogPageLocators
 
+
 class CatalogPage(BasePage):
     def add_to_basket_product_from_catalog_page(self):
         first_to_basket_button = self.browser.find_element(*CatalogPageLocators.FIRST_ADD_TO_BASKET_BUTTON)
@@ -27,16 +28,16 @@ class CatalogPage(BasePage):
         first_price_product = self.get_text_element(*CatalogPageLocators.FIRST_PRICE_PRODUCT_IN_CATALOG)
         alert_price_product = self.get_text_element(*CatalogPageLocators.ALERT_PRICE_PRODUCT)
         assert first_price_product == alert_price_product, "the value in the cart is the same as " \
-                                                          "the value of the item "
+                                                           "the value of the item "
 
     def should_be_button_alert_product_basket(self):
         assert self.is_element_present(*CatalogPageLocators.BUTTON_ALERT_PRODUCT_BASKET), \
             "there should be button alert product basket"
 
-    def  first_price_product_text(self):
+    def first_price_product_text(self):
         return self.get_text_element(*CatalogPageLocators.FIRST_PRICE_PRODUCT_IN_CATALOG)
 
-    def  first_name_product_text(self):
+    def first_name_product_text(self):
         return self.get_text_element(*CatalogPageLocators.FIRST_NAME_PRODUCT)
 
     def search_product(self, name_product):
@@ -46,14 +47,5 @@ class CatalogPage(BasePage):
         search_btn.click()
 
     def should_be_item_expected_in_the_search_results(self, name_product):
-        assert self.get_text_element(*CatalogPageLocators.ITEM_LEARNING_PYTHON)  == name_product, \
+        assert self.get_text_element(*CatalogPageLocators.ITEM_LEARNING_PYTHON) == name_product, \
             "no product search results "
-
-
-
-
-
-
-
-
-

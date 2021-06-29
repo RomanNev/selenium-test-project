@@ -8,8 +8,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 from .locators import BasePageLocators, CatalogPageLocators
 from .locators import LoginPageLocators
 
+
 class BasePage():
-    def __init__(self, browser, url, language = None , timeout=10):
+    def __init__(self, browser, url, language=None, timeout=10):
         self.browser = browser
         self.url = url
         self.browser.implicitly_wait(timeout)
@@ -79,9 +80,11 @@ class BasePage():
             "expected product price in the header of the site "
 
     def should_be_message_authorized_new_user(self):
-        assert self.is_element_present(*LoginPageLocators.RESULT_MESSAGE_REGISTRATION), "Successful register message is not presented, " \
-                                                                           "probably unauthorised user"
+        assert self.is_element_present(
+            *LoginPageLocators.RESULT_MESSAGE_REGISTRATION), "Successful register message is not presented, " \
+                                                             "probably unauthorised user"
 
     def should_be_message_authorized_old_user(self):
-        assert self.is_element_present(*LoginPageLocators.SUCCESSFUL_AUTHORIZED_MESSAGE), "Successful register message is not presented, " \
-                                                                           "probably unauthorised user"
+        assert self.is_element_present(
+            *LoginPageLocators.SUCCESSFUL_AUTHORIZED_MESSAGE), "Successful register message is not presented, " \
+                                                               "probably unauthorised user"

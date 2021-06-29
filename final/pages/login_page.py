@@ -30,5 +30,3 @@ class LoginPage(BasePage):
         self.browser.find_element(*LoginPageLocators.INPUT_EMAIL).send_keys(login)
         self.browser.find_element(*LoginPageLocators.INPUT_PASSWORD).send_keys(password)
         self.browser.find_element(*LoginPageLocators.SUBMIT_BUTTON).click()
-
-

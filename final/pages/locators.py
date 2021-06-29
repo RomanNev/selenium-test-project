@@ -49,20 +49,14 @@ class BasketPageLocators():
 class CatalogPageLocators():
     FIRST_ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, "li.col-xs-6:nth-child(1) > article:nth-child(1) > "
                                                    "div:nth-child(4) > form:nth-child(3) > button")
-    FIRST_PRICE_PRODUCT_IN_CATALOG = (By.CSS_SELECTOR, "li.col-xs-6:nth-child(1) > article:nth-child(1) > div:nth-child(4) > p.price_color")
+    FIRST_PRICE_PRODUCT_IN_CATALOG = (
+    By.CSS_SELECTOR, "li.col-xs-6:nth-child(1) > article:nth-child(1) > div:nth-child(4) > p.price_color")
     MESSAGE_SUCCESSFULLY_ADD_ITEM_TO_THE_CART = (By.CSS_SELECTOR, "div.alert:nth-child(1) > div")
     ALERT_PRODUCT_BASKET = (By.CSS_SELECTOR, ".alert-info")
     BUTTON_ALERT_PRODUCT_BASKET = (By.CSS_SELECTOR, "a.btn-info:nth-child(1)")
     ALERT_PRICE_PRODUCT = (By.CSS_SELECTOR, ".alert-info strong")
-    PRICE_PRODUCT_IN_SITE_HEADER =(By.CSS_SELECTOR, ".basket-mini > strong")
+    PRICE_PRODUCT_IN_SITE_HEADER = (By.CSS_SELECTOR, ".basket-mini > strong")
     FIRST_NAME_PRODUCT = (By.CSS_SELECTOR, 'h3 [href="/ru/catalogue/the-shellcoders-handbook_209/"]')
     SEARCH_INPUT = (By.CSS_SELECTOR, "#id_q")
     SEARCH_BUTTON = (By.CSS_SELECTOR, "input.btn-default")
     ITEM_LEARNING_PYTHON = (By.CSS_SELECTOR, 'h3 a[href="/ru/catalogue/learning-python_121/"]')
-
-
-
-
-
-
-
