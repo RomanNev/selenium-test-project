@@ -5,7 +5,7 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-from .locators import BasePageLocators
+from .locators import BasePageLocators, CatalogPageLocators
 from .locators import LoginPageLocators
 
 class BasePage():
@@ -73,6 +73,10 @@ class BasePage():
     def should_be_authorized_user(self):
         assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
                                                                      " probably unauthorised user"
+
+    def should_price_product_in_site_header(self):
+        assert self.is_element_present(*CatalogPageLocators.PRICE_PRODUCT_IN_SITE_HEADER), \
+            "expected product price in the header of the site "
 
     def should_be_message_authorized_new_user(self):
         assert self.is_element_present(*LoginPageLocators.RESULT_MESSAGE_REGISTRATION), "Successful register message is not presented, " \

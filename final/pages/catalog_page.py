@@ -24,10 +24,14 @@ class CatalogPage(BasePage):
             "expected product price in the header of the site "
 
     def check_price_added_item(self):
-        first_price_produt = self.get_text_element(*CatalogPageLocators.FIRST_PRICE_PRODUCT_IN_CATALOG)
-        alert_price_product = self.get_text_element(*CatalogPageLocators.ALERT_PRODUCT_BASKET)
-        assert first_price_produt == alert_price_product, "the value in the cart is the same as " \
+        first_price_product = self.get_text_element(*CatalogPageLocators.FIRST_PRICE_PRODUCT_IN_CATALOG)
+        alert_price_product = self.get_text_element(*CatalogPageLocators.ALERT_PRICE_PRODUCT)
+        assert first_price_product == alert_price_product, "the value in the cart is the same as " \
                                                           "the value of the item "
+
+    def should_be_button_alert_product_basket(self):
+        assert self.is_element_present(*CatalogPageLocators.BUTTON_ALERT_PRODUCT_BASKET), \
+            "there should be button alert product basket"
 
 
 

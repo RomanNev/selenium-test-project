@@ -51,7 +51,7 @@ class CatalogPageLocators():
     ALERT_PRODUCT_BASKET = (By.CSS_SELECTOR, ".alert-info")
     BUTTON_ALERT_PRODUCT_BASKET = (By.CSS_SELECTOR, "a.btn-info:nth-child(1)")
     ALERT_PRICE_PRODUCT = (By.CSS_SELECTOR, ".alert-info strong")
-    PRICE_PRODUCT_IN_SITE_HEADER =(By.CSS_SELECTOR, ".basket-mini > strong ")
+    PRICE_PRODUCT_IN_SITE_HEADER =(By.CSS_SELECTOR, ".basket-mini > strong")
 
 
 

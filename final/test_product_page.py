@@ -83,7 +83,7 @@ class TestProductPage:
         page.go_to_basket()
         basket_page = BasketPage(browser, browser.current_url)
         # Assert
-        basket_page.should_not_be_messege_item_in_the_cart()
+        basket_page.should_not_be_message_item_in_the_cart()
         basket_page.should_be_empty_cart_message()
 
     @allure.title("Гость не видит сообщение об успешном добавление продукта в корзину после перехода на стрницу продукта")

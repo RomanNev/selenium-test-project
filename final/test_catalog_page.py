@@ -1,7 +1,9 @@
 import allure
 import pytest
+
+from final.pages.basket_page import BasketPage
 from final.pages.catalog_page import CatalogPage
-from final.pages.product_page import ProductPage
+
 
 
 class TestCatalogPage:
@@ -17,8 +19,11 @@ class TestCatalogPage:
         #Assert
         page.should_successfully_message_add_item_to_the_cart()
         page.should_successfully_alert_add_item_to_the_cart()
-        page.should_price_product_in_site_header()
         page.check_price_added_item()
+        page.should_be_button_alert_product_basket()
+        page.should_price_product_in_site_header()
+
+
 
     @pytest.mark.personal_tests
     @allure.title("Гость может перейти в корзину через  появивщееся уведомление, "
@@ -30,8 +35,16 @@ class TestCatalogPage:
         page.open()
         page.add_to_basket_product_from_catalog_page()
         page.go_to_basket_via_alert_from_catalog_page()
-        product_page = ProductPage(browser, browser.current_url)
+        product_page = BasketPage(browser, browser.current_url)
         # Assert
+        product_page.should_be_message_item_in_the_cart()
+
+
+
+
+
+
+
 
 
 
