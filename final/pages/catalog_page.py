@@ -1,4 +1,4 @@
-from final.pages.base_page import BasePageC
+from final.pages.base_page import BasePage
 from final.pages.locators import CatalogPageLocators
 
 class CatalogPage(BasePage):

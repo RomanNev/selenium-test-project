@@ -63,7 +63,7 @@ class TestCatalogPage:
     def test_product_catalog_search(self, browser):
         # Arrange
         search_data = "Learning Python"
-        search_data_fragment = "Python"
+
         page = CatalogPage(browser, self.catalog_link)
         page.open()
         # Act
