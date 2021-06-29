@@ -60,8 +60,8 @@ class TestCatalogPage:
         basket_page.should_be_no_deleted_item_in_the_cart()
 
     @pytest.mark.personal_tests
-    @allure.title("Поиск товара по каталогу'")
-    def test_product_catalog_search(self, browser):
+    @allure.title("Поиск товара по полному совпадению имени в каталоге '")
+    def test_product_catalog_search_complete_match(self, browser):
         # Arrange
         search_data = "Learning Python"
 
@@ -71,3 +71,16 @@ class TestCatalogPage:
         page.search_product(search_data)
         # Assert
         page.should_be_item_expected_in_the_search_results(search_data)
+
+    @pytest.mark.personal_tests
+    @allure.title("Поиск товара по частичному совпадению имени в каталоге")
+    def test_product_catalog_search_partial_match(self, browser):
+        # Arrange
+        search_data_fragment = "Python"
+        full_search_data = "Learning Python"
+        page = CatalogPage(browser, self.catalog_link)
+        page.open()
+        # Act
+        page.search_product(search_data_fragment)
+        # Assert
+        page.should_be_item_expected_in_the_search_results(full_search_data)
