@@ -43,6 +43,7 @@ class BasketPageLocators():
     MESSAGE_ITEM_IN_THE_CART = (By.CSS_SELECTOR, ".col-sm-6.h3")
     PRICE_ITEM_IN_BASKET = (By.CSS_SELECTOR, ".col-sm-1 .price_color")
     NAME_ITEM = (By.CSS_SELECTOR, '.col-sm-4 h3 [href="/ru/catalogue/the-shellcoders-handbook_209/"]')
+    DELETE_BUTTON_ITEM = (By.CSS_SELECTOR, "a.inline")
 
 
 class CatalogPageLocators():
