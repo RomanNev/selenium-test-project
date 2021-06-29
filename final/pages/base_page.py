@@ -88,3 +88,6 @@ class BasePage():
         assert self.is_element_present(
             *LoginPageLocators.SUCCESSFUL_AUTHORIZED_MESSAGE), "Successful register message is not presented, " \
                                                                "probably unauthorised user"
+
+    def should_be_empty_search(self):
+        assert self.is_element_present(*BasePageLocators.EMPTY_SEARCH), "empty output expected"

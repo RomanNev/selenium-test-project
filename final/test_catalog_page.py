@@ -73,6 +73,19 @@ class TestCatalogPage:
         page.should_be_item_expected_in_the_search_results(search_data)
 
     @pytest.mark.personal_tests
+    @allure.title("Гость может удалить текст в строке поиска")
+    def test_guest_can_delete_the_text_in_the_search_bar(self, browser):
+        # Arrange
+        search_data_fragment = "Python"
+        page = CatalogPage(browser, self.catalog_link)
+        page.open()
+        page.search_product(search_data_fragment)
+        # Act
+        page.clear_search_bar_and_empty_search()
+        # Assert
+        page.should_be_empty_search()
+
+    @pytest.mark.personal_tests
     @allure.title("Поиск товара по частичному совпадению имени в каталоге")
     def test_product_catalog_search_partial_match(self, browser):
         # Arrange

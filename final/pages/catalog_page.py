@@ -49,3 +49,9 @@ class CatalogPage(BasePage):
     def should_be_item_expected_in_the_search_results(self, name_product):
         assert self.get_text_element(*CatalogPageLocators.ITEM_LEARNING_PYTHON) == name_product, \
             "no product search results "
+
+    def clear_search_bar_and_empty_search(self):
+        search_bar = self.browser.find_element(*CatalogPageLocators.SEARCH_INPUT)
+        search_btn = self.browser.find_element(*CatalogPageLocators.SEARCH_BUTTON)
+        search_bar.clear()
+        search_btn.click()

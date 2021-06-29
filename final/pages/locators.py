@@ -36,6 +36,7 @@ class BasePageLocators():
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-group a.btn.btn-default")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+    EMPTY_SEARCH = (By.CSS_SELECTOR, ".form-horizontal")
 
 
 class BasketPageLocators():
