@@ -55,3 +55,8 @@ class CatalogPage(BasePage):
         search_btn = self.browser.find_element(*CatalogPageLocators.SEARCH_BUTTON)
         search_bar.clear()
         search_btn.click()
+
+    def chek_input_value(self):
+        search_bar = self.browser.find_element(*CatalogPageLocators.SEARCH_INPUT)
+        value_search_bar = search_bar.get_attribute('value')
+        assert value_search_bar == "", "empty input field expected"

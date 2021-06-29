@@ -83,6 +83,7 @@ class TestCatalogPage:
         # Act
         page.clear_search_bar_and_empty_search()
         # Assert
+        page.chek_input_value()
         page.should_be_empty_search()
 
     @pytest.mark.personal_tests
